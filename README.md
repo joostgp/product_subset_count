@@ -2,7 +2,7 @@
 
 Python script to extract and count items commonly bought together. The items are extracted from a transaction log and the subsets, including subset frequency, are exported to a textfile. In order to reduce the amount of possible subsets, it increases the subset size in an iterative way and uses the output of a single iteration of reduce the subsets of the next iteration.
 
-The minimum size of subsets and minimum subset count can be specified.
+The minimum size of subsets and minimum subset frequency can be specified.
 
 ### Prerequisites
 
@@ -26,7 +26,7 @@ Count product subsets.
 
 positional arguments:
   input_file    input file transaction log
-  sigma         sigma
+  sigma         minimum subset frequency
   output_file   outputfile (default: frequent_item_sets.txt)
   min_set_size  Minimum set size (default: 3)
 
