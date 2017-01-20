@@ -130,17 +130,21 @@ def count_subsets_iterate(X,
 
     while True:
         t0 = time.time()
+
+        # Get subset counts for specific subset size
         subset_count = count_subsets_single_n(X,
                                               sigma,
                                               set_size,
                                               found_subsets)
 
+        # Store results only if correct set size
         if set_size >= min_set_size:
             frequent_item_sets.update(subset_count)
 
-        # Get valid combinations
+        # Get found subsets to use for next iteration
         found_subsets = set(subset_count.keys())
 
+        # Get unique elements from found subsets
         valid_ele = set(chain.from_iterable(found_subsets))
 
         vprint('Evaluated subset size {} in {:.1f}s: '
