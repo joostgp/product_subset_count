@@ -35,11 +35,12 @@ optional arguments:
   --verbose     output progress
 ```
 
-Example
+### Example
+The following command
 ```
 python product_subsets.py retail_25k.dat 4 --verbose
 ```
-stores the subsets in ```frequent_item_sets.txt``` and generates the following output
+stores the subsets in ```frequent_item_sets.txt``` and generates the following output.
 ```
 Evaluated subset size 2 in 1.3s: 6154 elements and 54715 subsets
 Evaluated subset size 3 in 7.7s: 4943 elements and 76151 subsets
