@@ -28,7 +28,7 @@ positional arguments:
   input_file    input file transaction log
   sigma         minimum subset frequency
   output_file   outputfile (default: frequent_item_sets.txt)
-  min_set_size  Minimum set size (default: 3)
+  min_set_size  minimum subset size (default: 3)
 
 optional arguments:
   -h, --help    show this help message and exit
@@ -39,7 +39,7 @@ Example
 ```
 python product_subsets.py retail_25k.dat 4 --verbose
 ```
-generates the following output
+stores the subsets in ```frequent_item_sets.txt``` and generates the following output
 ```
 Evaluated subset size 2 in 1.3s: 6154 elements and 54715 subsets
 Evaluated subset size 3 in 7.7s: 4943 elements and 76151 subsets
