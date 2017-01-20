@@ -8,10 +8,10 @@ Created on Fri Jan 20 09:45:45 2017
 import unittest
 import doctest
 import random
-import product_subsets
+import subset_count
 
-from product_subsets import load_transactions, load_outputfile
-from product_subsets import count_subsets_single_n, count_subsets_iterate
+from subset_count import load_transactions, load_outputfile
+from subset_count import count_subsets_single_n, count_subsets_iterate
 
 class TestTransaction(unittest.TestCase):
     
@@ -62,7 +62,7 @@ class TestTransaction(unittest.TestCase):
     def test_output(self):
         n_tests = 25
         transactions = load_transactions('retail_25k.dat')
-        subsets = load_outputfile('frequent_item_sets.txt')
+        subsets = load_outputfile('output.txt')
         
         n=0
         while n<n_tests:
@@ -78,5 +78,5 @@ class TestTransaction(unittest.TestCase):
             
 if __name__=='__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(TestTransaction)
-    suite.addTest(doctest.DocTestSuite(product_subsets))
+    suite.addTest(doctest.DocTestSuite(subset_count))
     unittest.TextTestRunner(verbosity=3).run(suite)
